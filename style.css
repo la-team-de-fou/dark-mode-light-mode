@@ -1,3 +1,28 @@
+:root {
+    --bg: #f4f4f4;
+    --text: #222;
+    --header-bg: #fff;
+    --surface: #fff;
+    --muted: #f7f9fa;
+    --card-border: rgba(0,123,255,0.13);
+    --primary: #007bff;
+    --shadow: 0 2px 4px rgba(0,0,0,0.04);
+    --hero-gradient: linear-gradient(90deg, #e3e3e3 0%, #f9f9f9 100%);
+}
+
+/* dark theme */
+html[data-theme="dark"] {
+    --bg: #0f1720;
+    --text: #e6eef7;
+    --header-bg: #0b1220;
+    --surface: #0b1320;
+    --muted: #0f1623;
+    --card-border: rgba(96,165,250,0.12);
+    --primary: #60a5fa;
+    --shadow: 0 2px 8px rgba(0,0,0,0.6);
+    --hero-gradient: linear-gradient(90deg, #0b1220 0%, #0f1720 100%);
+}
+
 /* --- Blocs tutoriel Git Flow --- */
 .tuto-container {
     max-width: 900px;
@@ -100,30 +125,6 @@
     }
 }
 /* Style de base pour la page UI dark/light mode */
-:root {
-    --bg: #f4f4f4;
-    --text: #222;
-    --header-bg: #fff;
-    --surface: #fff;
-    --muted: #f7f9fa;
-    --card-border: rgba(0,123,255,0.13);
-    --primary: #007bff;
-    --shadow: 0 2px 4px rgba(0,0,0,0.04);
-    --hero-gradient: linear-gradient(90deg, #e3e3e3 0%, #f9f9f9 100%);
-}
-
-/* dark theme */
-html[data-theme="dark"] {
-    --bg: #0f1720;
-    --text: #e6eef7;
-    --header-bg: #0b1220;
-    --surface: #0b1320;
-    --muted: #0f1623;
-    --card-border: rgba(96,165,250,0.12);
-    --primary: #60a5fa;
-    --shadow: 0 2px 8px rgba(0,0,0,0.6);
-    --hero-gradient: linear-gradient(90deg, #0b1220 0%, #0f1720 100%);
-}
 
 body {
     margin: 0;
