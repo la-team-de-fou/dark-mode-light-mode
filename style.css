@@ -1,0 +1,260 @@
+:root {
+    --bg: #f4f4f4;
+    --text: #222;
+    --header-bg: #fff;
+    --surface: #fff;
+    --muted: #f7f9fa;
+    --card-border: rgba(0,123,255,0.13);
+    --primary: #007bff;
+    --shadow: 0 2px 4px rgba(0,0,0,0.04);
+    --hero-gradient: linear-gradient(90deg, #e3e3e3 0%, #f9f9f9 100%);
+}
+
+/* dark theme */
+html[data-theme="dark"] {
+    --bg: #0f1720;
+    --text: #e6eef7;
+    --header-bg: #0b1220;
+    --surface: #0b1320;
+    --muted: #0f1623;
+    --card-border: rgba(96,165,250,0.12);
+    --primary: #60a5fa;
+    --shadow: 0 2px 8px rgba(0,0,0,0.6);
+    --hero-gradient: linear-gradient(90deg, #0b1220 0%, #0f1720 100%);
+}
+
+/* --- Blocs tutoriel Git Flow --- */
+.tuto-container {
+    max-width: 900px;
+    margin: 2.5rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 0 1rem;
+}
+.tuto-block {
+    background: var(--surface);
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+}
+.tuto-block h2 {
+    margin-top: 0;
+    color: #007bff;
+    font-size: 1.5rem;
+}
+
+.branch-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+}
+.branch-card {
+    background: var(--muted);
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    padding: 1rem 1.2rem;
+    min-width: 140px;
+    flex: 1 1 160px;
+    max-width: 200px;
+    text-align: center;
+    border-left: 5px solid var(--card-border);
+    transition: border-color 0.2s;
+}
+.branch-card.main { border-left-color: #007bff; }
+.branch-card.develop { border-left-color: #28a745; }
+.branch-card.feature { border-left-color: #ffc107; }
+.branch-card.release { border-left-color: #17a2b8; }
+.branch-card.hotfix { border-left-color: #dc3545; }
+.branch-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+}
+.branch-card p {
+    margin: 0;
+    font-size: 0.98rem;
+}
+
+.workflow-steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+}
+.step-card {
+    background: var(--muted);
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    padding: 1rem 1.2rem;
+    min-width: 180px;
+    flex: 1 1 200px;
+    max-width: 260px;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    border-top: 4px solid var(--card-border);
+    transition: border-color 0.2s;
+}
+.step-number {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    line-height: 2rem;
+    font-size: 1.1rem;
+    margin-right: 0.5rem;
+}
+.step-card strong {
+    color: #007bff;
+}
+
+@media (max-width: 900px) {
+    .tuto-container {
+        gap: 1.5rem;
+    }
+    .branch-cards, .workflow-steps {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+/* Style de base pour la page UI dark/light mode */
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+header {
+    background: var(--header-bg);
+    box-shadow: var(--shadow);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    position: relative;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links li a:hover {
+    color: var(--primary);
+}
+
+.theme-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: 1.5rem;
+}
+
+.theme-buttons button {
+    background: none;
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 50%;
+    padding: 0.4rem 0.6rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: var(--text);
+    transition: background 0.2s, border 0.2s, color 0.2s;
+}
+.theme-buttons button:hover {
+    background: rgba(0,0,0,0.03);
+    border-color: var(--primary);
+}
+.theme-buttons button.active {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 1.5rem;
+}
+.burger span {
+    display: block;
+    height: 4px;
+    width: 24px;
+    background: var(--text);
+    border-radius: 2px;
+}
+
+.hero {
+    text-align: center;
+    padding: 4rem 1rem 2rem 1rem;
+    background: var(--hero-gradient);
+}
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.hero-buttons button {
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 24px;
+    background: #007bff;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.hero-buttons button:hover {
+    background: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .burger {
+        display: flex;
+    }
+}
