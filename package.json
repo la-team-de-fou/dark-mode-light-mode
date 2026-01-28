@@ -1,0 +1,24 @@
+{
+  "name": "dark-mode-light-mode",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Pierre-gaillard-dev/dark-mode-light-mode#readme",
+  "bugs": {
+    "url": "https://github.com/Pierre-gaillard-dev/dark-mode-light-mode/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pierre-gaillard-dev/dark-mode-light-mode.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.3.1",
+    "@commitlint/config-conventional": "^20.3.1"
+  }
+}

@@ -17,6 +17,7 @@ jobs:
         with:
           node-version: '22'
           cache: npm
+        run: npm ci
 
       - name: Install commitlint
         run: npm install -D @commitlint/cli @commitlint/config-conventional
