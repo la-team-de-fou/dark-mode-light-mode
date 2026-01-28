@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dark/Light Mode UI</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<nav class="navbar">
+			<div class="logo">Git Flow Tutoriel</div>
+			<ul class="nav-links">
+				<li><a href="#">Accueil</a></li>
+				<li><a href="#">Qu'est-ce que Git Flow ?</a></li>
+				<li><a href="#">Étapes clés</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+			<div class="theme-buttons">
+				<button id="light-btn">☀️</button>
+				<button id="dark-btn">🌙</button>
+			</div>
+			<button class="burger" aria-label="Ouvrir le menu">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+		</nav>
+	</header>
+	<main>
+		<section class="hero">
+			<h1>Comprendre Git Flow</h1>
+			<p>Un guide simple et visuel pour organiser vos branches et votre workflow avec Git Flow.</p>
+			<div class="hero-buttons">
+				<button>Commencer le tuto</button>
+				<button>Voir les étapes</button>
+			</div>
+		</section>
+		<section class="tuto-container">
+			<div class="tuto-block">
+				<h2>Qu'est-ce que Git Flow&nbsp;?</h2>
+				<p>Git Flow est une méthode d'organisation des branches pour faciliter le développement collaboratif. Il définit des règles claires pour créer, fusionner et supprimer les branches selon leur rôle.</p>
+				<div class="branch-cards">
+					<div class="branch-card main">
+						<h3>main</h3>
+						<p>Branche de production, toujours stable.</p>
+					</div>
+					<div class="branch-card develop">
+						<h3>develop</h3>
+						<p>Branche d'intégration, où l'on fusionne les nouvelles fonctionnalités.</p>
+					</div>
+					<div class="branch-card feature">
+						<h3>feature/</h3>
+						<p>Pour développer de nouvelles fonctionnalités à partir de develop.</p>
+					</div>
+					<div class="branch-card release">
+						<h3>release/</h3>
+						<p>Pour préparer une nouvelle version avant la mise en production.</p>
+					</div>
+					<div class="branch-card hotfix">
+						<h3>hotfix/</h3>
+						<p>Pour corriger rapidement un bug en production.</p>
+					</div>
+				</div>
+			</div>
+			<div class="tuto-block">
+				<h2>Workflow Git Flow</h2>
+				<div class="workflow-steps">
+					<div class="step-card">
+						<span class="step-number">1</span>
+						<div>
+							<strong>Créer une branche feature/</strong> à partir de <strong>develop</strong>.
+						</div>
+					</div>
+					<div class="step-card">
+						<span class="step-number">2</span>
+						<div>
+							<strong>Développer et tester</strong> la fonctionnalité sur la branche feature/.
+						</div>
+					</div>
+					<div class="step-card">
+						<span class="step-number">3</span>
+						<div>
+							<strong>Fusionner</strong> la branche feature/ dans develop.
+						</div>
+					</div>
+					<div class="step-card">
+						<span class="step-number">4</span>
+						<div>
+							<strong>Créer une branche release/</strong> pour préparer la mise en production.
+						</div>
+					</div>
+					<div class="step-card">
+						<span class="step-number">5</span>
+						<div>
+							<strong>Fusionner release/</strong> dans main et develop.
+						</div>
+					</div>
+					<div class="step-card">
+						<span class="step-number">6</span>
+						<div>
+							<strong>Créer une branche hotfix/</strong> à partir de main en cas de bug urgent.
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</body>
+</html>
