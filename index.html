@@ -12,9 +12,9 @@
 		<nav class="navbar">
 			<div class="logo">Git Flow Tutoriel</div>
 			<ul class="nav-links">
-				<li><a href="#">Accueil</a></li>
-				<li><a href="#">Qu'est-ce que Git Flow ?</a></li>
-				<li><a href="#">Étapes clés</a></li>
+				<li><a href="#hero">Accueil</a></li>
+				<li><a href="#branch-cards">Qu'est-ce que Git Flow ?</a></li>
+				<li><a href="#workflow-steps">Étapes clés</a></li>
 				<li><a href="#">Contact</a></li>
 			</ul>
 			<div class="theme-buttons">
@@ -29,19 +29,19 @@
 		</nav>
 	</header>
 	<main>
-		<section class="hero">
+		<section class="hero" id="hero">
 			<h1>Comprendre Git Flow</h1>
 			<p>Un guide simple et visuel pour organiser vos branches et votre workflow avec Git Flow.</p>
 			<div class="hero-buttons">
-				<button>Commencer le tuto</button>
-				<button>Voir les étapes</button>
+				<a href="#branch-cards"><button>Commencer le tuto</button></a>
+				<a href="#workflow-steps"><button>Voir les étapes</button></a>
 			</div>
 		</section>
 		<section class="tuto-container">
 			<div class="tuto-block">
 				<h2>Qu'est-ce que Git Flow&nbsp;?</h2>
 				<p>Git Flow est une méthode d'organisation des branches pour faciliter le développement collaboratif. Il définit des règles claires pour créer, fusionner et supprimer les branches selon leur rôle.</p>
-				<div class="branch-cards">
+				<div class="branch-cards" id="branch-cards">
 					<div class="branch-card main">
 						<h3>main</h3>
 						<p>Branche de production, toujours stable.</p>
@@ -66,7 +66,7 @@
 			</div>
 			<div class="tuto-block">
 				<h2>Workflow Git Flow</h2>
-				<div class="workflow-steps">
+				<div class="workflow-steps" id="workflow-steps">
 					<div class="step-card">
 						<span class="step-number">1</span>
 						<div>
