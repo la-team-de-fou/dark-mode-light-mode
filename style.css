@@ -1,3 +1,28 @@
+:root {
+    --bg: #f4f4f4;
+    --text: #222;
+    --header-bg: #fff;
+    --surface: #fff;
+    --muted: #f7f9fa;
+    --card-border: rgba(0,123,255,0.13);
+    --primary: #007bff;
+    --shadow: 0 2px 4px rgba(0,0,0,0.04);
+    --hero-gradient: linear-gradient(90deg, #e3e3e3 0%, #f9f9f9 100%);
+}
+
+/* dark theme */
+html[data-theme="dark"] {
+    --bg: #0f1720;
+    --text: #e6eef7;
+    --header-bg: #0b1220;
+    --surface: #0b1320;
+    --muted: #0f1623;
+    --card-border: rgba(96,165,250,0.12);
+    --primary: #60a5fa;
+    --shadow: 0 2px 8px rgba(0,0,0,0.6);
+    --hero-gradient: linear-gradient(90deg, #0b1220 0%, #0f1720 100%);
+}
+
 /* --- Blocs tutoriel Git Flow --- */
 .tuto-container {
     max-width: 900px;
@@ -8,7 +33,7 @@
     padding: 0 1rem;
 }
 .tuto-block {
-    background: #fff;
+    background: var(--surface);
     border-radius: 16px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.06);
     padding: 2rem 1.5rem 1.5rem 1.5rem;
@@ -27,7 +52,7 @@
     justify-content: center;
 }
 .branch-card {
-    background: #f7f9fa;
+    background: var(--muted);
     border-radius: 10px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     padding: 1rem 1.2rem;
@@ -35,7 +60,7 @@
     flex: 1 1 160px;
     max-width: 200px;
     text-align: center;
-    border-left: 5px solid #007bff22;
+    border-left: 5px solid var(--card-border);
     transition: border-color 0.2s;
 }
 .branch-card.main { border-left-color: #007bff; }
@@ -60,7 +85,7 @@
     justify-content: center;
 }
 .step-card {
-    background: #f7f9fa;
+    background: var(--muted);
     border-radius: 10px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     padding: 1rem 1.2rem;
@@ -70,12 +95,12 @@
     display: flex;
     align-items: flex-start;
     gap: 1rem;
-    border-top: 4px solid #007bff22;
+    border-top: 4px solid var(--card-border);
     transition: border-color 0.2s;
 }
 .step-number {
     display: inline-block;
-    background: #007bff;
+    background: var(--primary);
     color: #fff;
     font-weight: bold;
     border-radius: 50%;
@@ -100,16 +125,18 @@
     }
 }
 /* Style de base pour la page UI dark/light mode */
+
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #f4f4f4;
-    color: #222;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.25s ease, color 0.25s ease;
 }
 
 header {
-    background: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    background: var(--header-bg);
+    box-shadow: var(--shadow);
 }
 
 .navbar {
@@ -135,13 +162,13 @@ header {
 
 .nav-links li a {
     text-decoration: none;
-    color: #222;
+    color: var(--text);
     font-weight: 500;
     transition: color 0.2s;
 }
 
 .nav-links li a:hover {
-    color: #007bff;
+    color: var(--primary);
 }
 
 .theme-buttons {
@@ -152,16 +179,22 @@ header {
 
 .theme-buttons button {
     background: none;
-    border: 1px solid #ddd;
+    border: 1px solid rgba(0,0,0,0.12);
     border-radius: 50%;
     padding: 0.4rem 0.6rem;
     font-size: 1.1rem;
     cursor: pointer;
-    transition: background 0.2s, border 0.2s;
+    color: var(--text);
+    transition: background 0.2s, border 0.2s, color 0.2s;
 }
 .theme-buttons button:hover {
-    background: #f0f0f0;
-    border-color: #007bff;
+    background: rgba(0,0,0,0.03);
+    border-color: var(--primary);
+}
+.theme-buttons button.active {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
 }
 
 .burger {
@@ -180,14 +213,14 @@ header {
     display: block;
     height: 4px;
     width: 24px;
-    background: #222;
+    background: var(--text);
     border-radius: 2px;
 }
 
 .hero {
     text-align: center;
     padding: 4rem 1rem 2rem 1rem;
-    background: linear-gradient(90deg, #e3e3e3 0%, #f9f9f9 100%);
+    background: var(--hero-gradient);
 }
 .hero h1 {
     font-size: 2.5rem;
